@@ -12,13 +12,13 @@ class VerticalChirpKicker(xt.BeamElement):
 
     _extra_c_sources =['''
         /*gpufun*/
-        void Chirper_track_local_particle(
-                ChirperData el, LocalParticle* part0){
+        void VerticalChirpKicker_track_local_particle(
+                VerticalChirpKickerData el, LocalParticle* part0){
 
-            double const k0sl = ChirperData_get_k0sl(el);
-            double const q_start = ChirperData_get_q_start(el);
-            double const q_end = ChirperData_get_q_end(el);
-            double const num_turns = ChirperData_get_num_turns(el);
+            double const k0sl = VerticalChirpKickerData_get_k0sl(el);
+            double const q_start = VerticalChirpKickerData_get_q_start(el);
+            double const q_end = VerticalChirpKickerData_get_q_end(el);
+            double const num_turns = VerticalChirpKickerData_get_num_turns(el);
 
             //start_per_particle_block (part0->part)
                 double const at_turn = LocalParticle_get_at_turn(part);
