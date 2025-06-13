@@ -39,6 +39,7 @@ class VerticalChirpKicker(xt.BeamElement):
             //start_per_particle_block (part0->part)
                 double const at_turn = LocalParticle_get_at_turn(part);
                 if (at_turn < num_turns){
+                    double const old_px = LocalParticle_get_px(part);
                     double const old_py = LocalParticle_get_py(part);
                     // integrating to get the instantaneous phase
                     double const phi = 2 * PI * q_start * at_turn
@@ -54,7 +55,7 @@ class VerticalChirpKicker(xt.BeamElement):
                         0., // hy,
                         0, // radiation_flag,
                         1, // spin_flag,
-                        0., // old_px,
+                        old_px,
                         old_py,
                         0, // old_ax
                         0, // old_ay,
