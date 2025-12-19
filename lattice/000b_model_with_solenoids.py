@@ -3,6 +3,7 @@ import xtrack as xt
 line = xt.Line.from_json('lep.json')
 
 tt0 = line.get_table()
+
 env = line.env
 
 l_sol = 5.
